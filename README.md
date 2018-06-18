@@ -49,33 +49,31 @@ $ npm i ttf-module-loader
 }
 ```
 
-## Options
+### Options
 
 #### `output: string = "font/[hash:4]"`
 
-The output pattern of the generated assets. It uses Webpack tokenizer, so
-you can use the same way. Avoid using extension in the pattern, as it will be 
-suffixed differently for different formats.
+The output pattern of the generated assets. Avoid using extension in the pattern, 
+as it will be suffixed differently for different formats.
 
 - `[hash]`: Digest of the resource
 - `[name]`: Basename of the resource
 
 #### `legacy: boolean = false`
 
-If enabled, then EOT and SVG Font files will be generated as well to support 
-old versions of Internet Explorer (6+) and Safari.
+If enabled, implements support for old browsers (IE 6+, legacy iOS).
 
 ## Usage
 
-When a TTF file is imported, a `@font-face` declaration is popping into
-existence, once per resource.
+When a TTF file is imported at first time, a `@font-face` declaration is 
+created, so it become ready to use automatically.
 
-**All you have to do is import** 😊
+😊
 
 ### CSS Modules
 
-Every generated CSS exports a basic class definition with the name `font`,
-what you can use for composing.
+Every generated CSS exports a class definition with the name `font` to
+compose.
 
 ```css
 .myClass {
@@ -83,21 +81,17 @@ what you can use for composing.
 }
 ```
 
-But if you need some properties only:
+If you have your own strategy:
 
 ```css
 @value NAME, WEIGHT from 'path/to/font.ttf';
  
 .myClass {
-    font-family: NAME, sans-serif;
-    font-weight: WEIGHT;
+    font: WEIGHT 100%/1.5 NAME, sans-serif;
 }
 ```
 
 ### ECMAScript
-
-In this case `@font-face` declaration is applied to the CSS as well on load,
-but only once at all.
 
 ```javascript
 import * as font from 'path/to/font.ttf';
