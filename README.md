@@ -7,7 +7,7 @@ ttf-module-loader  [![Build Status][X]][Y]
 
 - Parses TTF for OS/2 and NAME tables to create `@font-face` declaration
   automatically
-- Adds hinting info ([TTFAutohint][0])
+- Adds hinting info - [TTFAutohint][0]
 - Generates CSS and standard WebFont files
   - `WOFF`
   - `WOFF2`
