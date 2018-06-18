@@ -15,7 +15,7 @@ ttf-module-loader  [![Build Status][X]][Y]
   - `EOT` \*
   - `SVG Font` \*
 
-**\* If `legacy` option is enabled.**
+The types marked with \* are supported only if `legacy` option is enabled. 
 
 ### Highlights
 
