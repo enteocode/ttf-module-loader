@@ -5,7 +5,6 @@ ttf-module-loader  [![Build Status][X]][Y]
 
 ### Requirements
 
-- `node` (LTS)
 - `webpack` (2.0 and above)
 - `css-loader`
 
