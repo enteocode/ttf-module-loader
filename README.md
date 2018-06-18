@@ -3,11 +3,6 @@ ttf-module-loader  [![Build Status][X]][Y]
 
 > Webpack Loader to use TTF files as CSS Modules
 
-### Requirements
-
-- `webpack` (2.0 and above)
-- `css-loader`
-
 ### Key Features
 
 - Parses TTF for OS/2 and NAME tables to create `@font-face` declaration
@@ -20,13 +15,18 @@ ttf-module-loader  [![Build Status][X]][Y]
   - `EOT` \*
   - `SVG Font` \*
 
-\* If `legacy` option is enabled.
+**\* If `legacy` option is enabled.**
 
 ### Highlights
 
 - Type strict as possible (ESLint)
 - ES7
 - Functional
+
+### Requirements
+
+- `webpack` (2.0 and above)
+- `css-loader`
 
 ## Install
 
