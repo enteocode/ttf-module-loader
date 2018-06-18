@@ -66,9 +66,7 @@ If enabled, implements support for old browsers (IE 6+, legacy iOS).
 ## Usage
 
 When a TTF file is imported at first time, a `@font-face` declaration is 
-created, so it become ready to use automatically.
-
-😊
+created, so it become ready to use.
 
 ### CSS Modules
 
