@@ -1,0 +1,10 @@
+# Source related folders
+
+/node_modules/
+/example/
+
+/index.js
+
+# Rollup configuration isn't make any sense on code-quality
+
+/rollup.config.js

@@ -1,0 +1,5 @@
+@value NAME, WEIGHT from './roboto.ttf';
+
+.test {
+    font: WEIGHT 100%/1.5 NAME, sans-serif;
+}

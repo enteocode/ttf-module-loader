@@ -1,0 +1,31 @@
+{
+    "parser": "babel-eslint",
+    "plugins": [
+        "flowtype"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "rules": {
+        "quotes": [1, "single", { "allowTemplateLiterals": true }],
+        "no-bitwise": 0,
+        "no-console": 0,
+        "flowtype/define-flow-type": 1,
+        "flowtype/delimiter-dangle": [1, "never"],
+        "flowtype/generic-spacing": [1, "never"],
+        "flowtype/no-dupe-keys": 2,
+        "flowtype/no-types-missing-file-annotation": 0,
+        "flowtype/object-type-delimiter": [1, "semicolon"],
+        "flowtype/require-parameter-type": 1,
+        "flowtype/require-return-type": [1, "always", { "annotateUndefined": "never" }],
+        "flowtype/use-flow-type": 1,
+        "flowtype/valid-syntax": 1
+    },
+    "settings": {
+        "flowtype": {
+            "onlyFilesWithFlowAnnotation": false
+        }
+    }
+}
