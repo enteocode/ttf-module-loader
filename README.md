@@ -5,10 +5,17 @@ ttf-module-loader  [![Build Status][X]][Y]
 
 ### Key Features
 
-- Parses TTF for `OS/2` and `NAME` tables to create `@font-face` declaration
+- Parses TTF for OS/2 and NAME tables to create `@font-face` declaration
   automatically
-- Adds hinting info by [TTFAutohint][0]
-- Generates CSS and WebFont assets
+- Adds hinting info
+- Generates CSS and standard WebFont files
+  - `WOFF`
+  - `WOFF2`
+  - `TTF`
+  - `EOT` \*
+  - `SVG Font` \*
+
+\* If `legacy` option is enabled.
 
 ### Highlights
 
@@ -16,22 +23,17 @@ ttf-module-loader  [![Build Status][X]][Y]
 - ES7
 - Functional
 
-### Supported Outputs
-
-  - `WOFF`, `WOFF2`, `TTF`
-  - `EOT`, `SVG Font` (if `legacy` option is enabled)
-
 ## Install
 
 ```bash
-$ npm i -S ttf-module-loader
+$ npm i ttf-module-loader
 ```
 
 ## Configuration
 
-```javascript
-// webpack.config.js
- 
+`webpack.config.js`
+
+```javascript 
 {
     test : /\.(?:css|ttf)$/i,
     use : [
@@ -42,15 +44,7 @@ $ npm i -S ttf-module-loader
 }
 ```
 
-Notice that `.ttf` is passed along with `.css`.
-
-This is important because `css-loader` is essential, which is a special loader 
-as exports data for both CSS and ES. Multiple instances can cause problems 
-if using Extractor for production builds.
-
-Thus, we must hook to the same CSS process line.
-
-### Options
+## Options
 
 #### `output: string = "font/[hash:4]"`
 
@@ -75,14 +69,14 @@ what you can use for composing.
 
 ```css
 .myClass {
-    composes: font from './path/to/font.ttf';
+    composes: font from '../path/to/font.ttf';
 }
 ```
 
 But if you need some data only, then you can do
 
 ```css
-@value NAME, WEIGHT from './path/to/font.ttf';
+@value NAME, WEIGHT from '../path/to/font.ttf';
  
 .myClass {
     font-family: NAME, sans-serif;
@@ -96,7 +90,7 @@ In this case `@font-face` declaration is applied to the CSS as well on load,
 but only once at all.
 
 ```javascript
-import * as font from './path/to/font.ttf';
+import * as font from '../path/to/font.ttf';
  
 console.log(font);
 ```
@@ -110,16 +104,18 @@ the Font to avoid multiple cache instances caused by different query
 parameters. As an additional benefit of parsing, we can create the best
 configuration for hinting without any manual intervention.
 
+**[TTFAutohint][0]**
+
 #### Autodetect configuration
 
 - For icon-fonts
 - For sub and superscript support
 
-#### Faces
+#### Font-faces
 
 If you are importing multiple faces of the same family, it will act like this:
 
-`path/to/Roboto.ttf`
+`Roboto.ttf`
 
 ```css
 @font-face {
@@ -129,7 +125,7 @@ If you are importing multiple faces of the same family, it will act like this:
 }
 ```
 
-`path/to/RobotoBoldItalic.ttf`
+`RobotoBoldItalic.ttf`
 
 ```css
 @font-face {
@@ -139,7 +135,7 @@ If you are importing multiple faces of the same family, it will act like this:
 }
 ```
 
-#### Properties
+#### Exported properties
 
 Every generated CSS exports additional constants about the Font:
 
