@@ -7,7 +7,7 @@ ttf-module-loader  [![Build Status][X]][Y]
 
 - Parses TTF for OS/2 and NAME tables to create `@font-face` declaration
   automatically
-- Adds hinting info
+- Adds hinting info ([TTFAutohint][0])
 - Generates CSS and standard WebFont files
   - `WOFF`
   - `WOFF2`
@@ -15,7 +15,7 @@ ttf-module-loader  [![Build Status][X]][Y]
   - `EOT` \*
   - `SVG Font` \*
 
-\* If `legacy` option is enabled.
+**\* If `legacy` option is enabled.**
 
 ### Highlights
 
@@ -105,8 +105,6 @@ Every data needed to build `@font-face` declaration is extracted directly from
 the Font to avoid multiple cache instances caused by different query 
 parameters. As an additional benefit of parsing, we can create the best
 configuration for hinting without any manual intervention.
-
-**[TTFAutohint][0]**
 
 #### Autodetect configuration
 
