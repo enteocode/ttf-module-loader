@@ -51,7 +51,7 @@ $ npm i ttf-module-loader
 
 ## Options
 
-### `output: string = "font/[hash:4]"`
+#### `output: string = "font/[hash:4]"`
 
 The output pattern of the generated assets. It uses Webpack tokenizer, so
 you can use the same way. Avoid using extension in the pattern, as it will be 
@@ -60,7 +60,7 @@ suffixed differently for different formats.
 - `[hash]`: Digest of the resource
 - `[name]`: Basename of the resource
 
-### `legacy: boolean = false`
+#### `legacy: boolean = false`
 
 If enabled, then EOT and SVG Font files will be generated as well to support 
 old versions of Internet Explorer (6+) and Safari.
